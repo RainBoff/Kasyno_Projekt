@@ -1,0 +1,44 @@
+﻿@model Kasyno_Projekt.ViewModels.SlotMachineViewModel
+
+
+<div  class="container ">
+      
+        <div class="row">
+
+            @foreach(var slot in @Model.Game.DisplaySlots)
+            {
+              
+                  <div class="col p-3 bg-white display-1 text-center border border-dark" >@slot</div>                
+            }
+        </div>
+            
+        <div class="row">
+                <div class="col justify-content-center">
+                    <div class="row justify-content-center"> 🍒 Bet X2</div>
+                    <div class="row justify-content-center"> 🍒🍒 Bet X4</div>
+                    <div class="row justify-content-center"> 👌👌👌 Bet X10</div>
+                    <div class="row justify-content-center"> 🍇🍇🍇 Bet X15</div>
+                </div>
+                    <div class="col">
+                    <div class="row justify-content-center"> 🔔🔔🔔 Bet X20</div>
+                    <div class="row justify-content-center"> 💲💲💲 Bet X30</div>
+                    <div class="row justify-content-center"> 🍒🍒🍒 Bet X50</div>
+                    <div class="row justify-content-center"> 𝟳𝟳𝟳 Bet X1000</div>
+                </div>
+           
+
+
+        </div>
+           
+
+            <div class="row text-center"> <h4> Żetony: @Model.User.Chips </h4> </div>
+    
+
+            <div class="row d-flex align-self-lg-end">
+                <button type="button" class="flex-fill align-bottom btn btn-secondary btn-block">
+                     <a class="nav-link text-white" asp-area="" asp-controller="SlotMachine" asp-action="Play">Graj</a>
+                </button>
+            </div>
+      
+
+</div>
