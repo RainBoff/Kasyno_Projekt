@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasyno_Projekt", "Kasyno_Projekt\Kasyno_Projekt.csproj", "{D964098A-5782-4C36-A91C-F6BA6C722ED9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D964098A-5782-4C36-A91C-F6BA6C722ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D964098A-5782-4C36-A91C-F6BA6C722ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D964098A-5782-4C36-A91C-F6BA6C722ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D964098A-5782-4C36-A91C-F6BA6C722ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B029E780-A857-4DF9-94CC-BF86655A2D46}
+	EndGlobalSection
+EndGlobal
