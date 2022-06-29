@@ -16,3 +16,123 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.horse-G-1 {
+    color: green;
+    animation: horse-move 1s;
+}
+
+.horse-G-2 {
+    color: green;
+    animation: horse-move 2s;
+}
+
+.horse-G-3 {
+    color: green;
+    animation: horse-move 3s;
+}
+
+.horse-G-4 {
+    color: green;
+    animation: horse-move 4s;
+}
+
+.horse-G-5 {
+    color: green;
+    animation: horse-move 5s;
+}
+
+.horse-G-6 {
+    color: green;
+    animation: horse-move 6s;
+}
+
+.horse-G-7 {
+    color: green;
+    animation: horse-move 7s;
+}
+
+
+.horse-B-1 {
+    color: blue;
+    animation: horse-move 1s;
+}
+
+.horse-B-2 {
+    color: blue;
+    animation: horse-move 2s;
+}
+
+.horse-B-3 {
+    color: blue;
+    animation: horse-move 3s;
+}
+
+.horse-B-4 {
+    color: blue;
+    animation: horse-move 4s;
+}
+
+.horse-B-5 {
+    color: blue;
+    animation: horse-move 5s;
+}
+
+.horse-B-6 {
+    color: blue;
+    animation: horse-move 6s;
+}
+
+.horse-B-7 {
+    color: blue;
+    animation: horse-move 7s;
+}
+
+
+.horse-R-1 {
+    color: red;
+    animation: horse-move 1s;
+}
+
+.horse-R-2 {
+    color: red;
+    animation: horse-move 2s;
+}
+
+.horse-R-3 {
+    color: red;
+    animation: horse-move 3s;
+}
+
+.horse-R-4 {
+    color: red;
+    animation: horse-move 4s;
+}
+
+.horse-R-5 {
+    color: red;
+    animation: horse-move 5s;
+}
+
+.horse-R-6 {
+    color: red;
+    animation: horse-move 6s;
+}
+
+.horse-R-7 {
+    color: red;
+    animation: horse-move 7s;
+}
+    
+@keyframes horse-move
+{
+
+    0% {
+        transform: translateX(100%);
+    }
+
+   100% {
+        transform: translateX(0);
+    }
+}
