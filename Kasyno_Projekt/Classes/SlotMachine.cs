@@ -49,7 +49,7 @@ namespace Kasyno_Projekt.Classes
             {
                 return Bet * 100;
             }
-            if (CurrentSlots.Contains("🍒") && !CurrentSlots.Contains("🍒🍒") && CurrentSlots != "🍒🍒🍒")
+            if (CurrentSlots.Contains("🍒") && (!CurrentSlots.Contains("🍒🍒") || (CurrentSlots.StartsWith("🍒") && CurrentSlots.EndsWith("🍒"))) && CurrentSlots != "🍒🍒🍒")
             {
                 return Bet * 2;
             }

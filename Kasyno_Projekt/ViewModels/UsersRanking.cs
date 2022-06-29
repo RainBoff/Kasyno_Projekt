@@ -2,6 +2,6 @@
 {
     public class UsersRanking
     {
-        List<DisplayUser> RankingList = new List<DisplayUser>();
+       public  List<DisplayUser> RankingList = new List<DisplayUser>();
     }
 }
