@@ -1,0 +1,110 @@
+﻿@using Kasyno_Projekt.Classes
+@model Kasyno_Projekt.Classes.BlackJack;
+
+@{
+    ViewData["Title"] = "Game";
+}
+
+<div class="container-fluid">
+    <div  class="row">
+        <h1> reka dealera</h1>
+    <div class="d-flex justify-content-end border border-dark justify-content-center">
+         @if (!Model.GameOver)
+            {
+               <div class="p-2 bg-light border border-dark">
+                 <h1 style="color:@Model.DealerHand[0].TxtColor"> @Model.DealerHand[0].GetFace() </h1>
+               </div>
+               <div class="d-inline-flex p-2 border border-dark" style="background-color: #114c0f">
+                 <h1 style="color:#114c0f">___</h1>
+               </div>
+            }
+          else
+             {
+             @foreach (Karta karta in Model.DealerHand)
+                {
+                  <div class="p-2 bg-light border border-dark">
+                    <h1 style="color:@karta.TxtColor"> @karta.GetFace() </h1>
+                  </div>
+                }
+             }
+    </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col" style=" font-size:20px; text-align:center; min-height:50%">
+             <div> @Model.Komunikat </div>
+             <div> Zetony: @Model.Zetony </div>
+             <div> Kwota Zakładu: @Model.BetSize </div>
+            <div> PunktyGracza:@Model.PunktyGracz  PunktyDealera:@Model.PunktyDealera </div>
+        </div>
+    </div>
+    <br />
+     <div  class="row">
+        <h1> Ręka gracza</h1>
+        <div class="d-flex justify-content-end border border-dark justify-content-center"> 
+        @foreach (Karta karta in Model.PlayerHand)
+        {
+            <div class="d-inline-flex p-2 bg-light border border-dark">
+                <h1 style="color:@karta.TxtColor"> @karta.GetFace() </h1>
+            </div>
+        }
+        </div>
+     </div>
+     <div  class="row">
+          @if(Model.PlayerSplited)
+          {
+            <h3> Druga ręka</h3>
+            <div class="d-flex justify-content-end border border-dark justify-content-center">
+                @foreach (Karta karta in Model.SplitHand)
+                {
+                <div class="d-inline-flex p-2 bg-light border border-dark">
+                <h1 style="color:@karta.TxtColor"> @karta.GetFace() </h1>
+                </div> 
+                }
+            </div>
+        }
+        
+          </div>
+      <br />
+    @if (!Model.GameOver)
+    {
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="HIT">Hit</a></button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="Stay">Stay</a></button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="DoubleDown">DoubleDown</a></button>
+            </div>
+             @if (Model.PlayerSplited && !Model.SplitGameOver)
+             {
+                <div class="col">
+                    <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="ChangeHand">ZmienReke</a></button>
+                </div>
+             }
+            else
+                {
+                <div class="col">
+                    <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="Split">Split</a></button>
+                </div>
+                }
+         </div>       
+    }
+    else
+    {
+     <div class="row">
+      <button type="button" class="btn btn-secondary btn-block">
+         <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="Index">Nowe Rozdanie</a>
+      </button>
+     </div>
+     <br/>
+      <div class="row">
+            <div class="col"> <button type="button" class="btn btn-secondary btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="BetLower">Lower Bet</a></button>    </div>
+            <div class="col"> <div class="row"> Kwota zakładu: @Model.BetSize Twoje żetony: @Model.Zetony  </div> <div class="row"> @Model.Komunikat </div> </div>
+            <div class="col">  <button type="button" class="btn btn-secondary align-items-center btn-block"> <a class="nav-link text-white" asp-area="" asp-controller="BlackJack" asp-action="BetRise">Rise Bet</a></button>    </div>
+        </div>
+    }
+ 
+</div>
