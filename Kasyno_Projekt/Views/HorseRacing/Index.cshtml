@@ -1,7 +1,55 @@
-﻿@model Kasyno_Projekt.Classes.HorseRacing
+﻿@model Kasyno_Projekt.ViewModels.HorseRacingViewModel
 
-@foreach(var horse in Model.Horses)
+<div class="container">
+
+@foreach(var horse in Model.Game.Horses)
 {
      <h1 class="horse-@horse.Id-@horse.Speed"> 𓃗 </h1>
-
 }
+     
+
+
+
+<form>
+<div class="row"> 
+
+            <div class="row text-center">
+                
+                <h4> Żetony: @Model.User.Chips </h4> 
+                <p>kwota zakładu</p>
+                <input type="number" placeholder=@Model.Game.Bet value=@Model.Game.Bet name="BetSize"/>
+
+            </div>
+
+
+    <div class="col">
+        <div class="row d-flex align-self-lg-end">
+            <button type="submit" class="flex-fill align-bottom btn btn-secondary btn-block" asp-area="" asp-controller="HorseRacing" asp-action="BetBlue"  >
+                BetBlue
+            </button>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row d-flex align-self-lg-end">
+            <button type="submit" class="flex-fill align-bottom btn btn-secondary btn-block" asp-area="" asp-controller="HorseRacing" asp-action="BetGreen">
+                BetGreen
+            </button>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row d-flex align-self-lg-end">
+            <button type="submit" class="flex-fill align-bottom btn btn-secondary btn-block" asp-area="" asp-controller="HorseRacing" asp-action="BetRed" >
+                BetRed
+            </button>
+        </div>
+    </div>
+</div>
+</form>
+
+
+
+
+
+</div>

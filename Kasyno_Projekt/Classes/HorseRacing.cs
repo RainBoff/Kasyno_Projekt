@@ -19,7 +19,9 @@ namespace Kasyno_Projekt.Classes
     {
         public Random rnd = new Random();
         public List<Horse> Horses = new List<Horse>();
-        
+        public int Bet = 5;
+        public string UsersHorse="_";
+
         public void RaceHorses()
         {
             var Winner = rnd.Next(1, 11);
@@ -72,7 +74,17 @@ namespace Kasyno_Projekt.Classes
         }
 
 
-
+       public int Game_Result()
+        {
+            if(GetWinner()==UsersHorse|| UsersHorse=="_") 
+            {
+                if (UsersHorse == "_") { return 0; }
+                if (UsersHorse == "R") { return Bet * 2; }
+                if (UsersHorse == "B") { return Bet * 3; }
+                if (UsersHorse == "G") { return Bet * 10; }
+            }
+            return -Bet;
+        }
 
 
     }
