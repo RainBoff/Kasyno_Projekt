@@ -20,7 +20,6 @@ namespace Kasyno_Projekt.Classes
         public Random rnd = new Random();
         public List<Horse> Horses = new List<Horse>();
         
-        
         public void RaceHorses()
         {
             var Winner = rnd.Next(1, 11);
@@ -64,5 +63,17 @@ namespace Kasyno_Projekt.Classes
             }
         }
       
+        public string GetWinner()
+        {
+            if(Horses.OrderBy(x => x.Speed).FirstOrDefault().Id is not null)
+            { return Horses.OrderBy(x => x.Speed).FirstOrDefault().Id; }
+            else 
+            { return "_"; }
+        }
+
+
+
+
+
     }
 }

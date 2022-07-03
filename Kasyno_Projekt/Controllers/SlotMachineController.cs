@@ -54,9 +54,10 @@ namespace Kasyno_Projekt.Controllers
         }
 
 
-        public IActionResult Play()
+        public IActionResult Play(int BetSize)
         {
             GetUserAndGame();
+            SlotMachineViewModel.Game.Bet = BetSize;
             ChangeUsersChips(SlotMachineViewModel.User.UserId, SlotMachineViewModel.Game.Game());
             GetUserAndGame();
             return View("Index",SlotMachineViewModel);

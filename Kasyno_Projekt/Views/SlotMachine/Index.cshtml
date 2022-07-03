@@ -12,7 +12,7 @@
             }
         </div>
             
-        <div class="row">
+            <div class="row">
                 <div class="col justify-content-center">
                     <div class="row justify-content-center"> 🍒 Bet X2</div>
                     <div class="row justify-content-center"> 🍒🍒 Bet X4</div>
@@ -25,20 +25,28 @@
                     <div class="row justify-content-center"> 🍒🍒🍒 Bet X50</div>
                     <div class="row justify-content-center"> 𝟳𝟳𝟳 Bet X1000</div>
                 </div>
-           
+            </div>       
 
 
-        </div>
-           
+            <form  asp-area="" asp-controller="SlotMachine" asp-action="Play">
+            
+                <div class="row text-center">
+                
+                    <h4> Żetony: @Model.User.Chips </h4> 
+            
+                    <p>kwota zakładu</p>
+                    <input type="number" placeholder=@Model.Game.Bet value=@Model.Game.Bet name="BetSize"/>
 
-            <div class="row text-center"> <h4> Żetony: @Model.User.Chips </h4> </div>
+                </div>
     
 
-            <div class="row d-flex align-self-lg-end">
-                <button type="button" class="flex-fill align-bottom btn btn-secondary btn-block">
-                     <a class="nav-link text-white" asp-area="" asp-controller="SlotMachine" asp-action="Play">Graj</a>
-                </button>
-            </div>
-      
+
+                <div class="row d-flex align-self-lg-end">
+                    <button type="submit" class="flex-fill align-bottom btn btn-secondary btn-block">
+                        <h3>Graj</h3>
+                    </button>
+                </div>
+            </form>
+          
 
 </div>
