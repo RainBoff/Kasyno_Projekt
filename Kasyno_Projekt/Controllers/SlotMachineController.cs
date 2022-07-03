@@ -29,6 +29,15 @@ namespace Kasyno_Projekt.Controllers
         
         }
 
+
+        public int CheckBetSize(string UserId, int Bet) 
+        {
+
+            if (Bet <= GetUsersChips(UserId)&& Bet> 0)
+            { return Bet; }
+            else 
+            { return 0; }
+        }
         public string GetUserId() 
         {
            return _context.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault().Id;
@@ -57,7 +66,7 @@ namespace Kasyno_Projekt.Controllers
         public IActionResult Play(int BetSize)
         {
             GetUserAndGame();
-            SlotMachineViewModel.Game.Bet = BetSize;
+            SlotMachineViewModel.Game.Bet = CheckBetSize(SlotMachineViewModel.User.UserId, BetSize);
             ChangeUsersChips(SlotMachineViewModel.User.UserId, SlotMachineViewModel.Game.Game());
             GetUserAndGame();
             return View("Index",SlotMachineViewModel);
